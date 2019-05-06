@@ -1,0 +1,22 @@
+{
+  "name": "angular_fruit_store",
+  "version": "1.0.0",
+  "description": "Chunyang's slef-made online fruit store",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjia23/Angular_Fruit_Store.git"
+  },
+  "author": "Brian Jia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjia23/Angular_Fruit_Store/issues"
+  },
+  "homepage": "https://github.com/cjia23/Angular_Fruit_Store#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
