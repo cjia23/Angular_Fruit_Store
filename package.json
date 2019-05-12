@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/cjia23/Angular_Fruit_Store#readme",
   "dependencies": {
+    "@angular/animations": "^7.2.15",
+    "@angular/cdk": "^7.3.7",
+    "@angular/material": "^7.3.7",
     "express": "^4.16.4",
     "mongoose": "^5.5.6"
   }

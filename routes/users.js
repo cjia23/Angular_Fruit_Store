@@ -1,7 +1,7 @@
 const express = require('express')
-const app = express.Router()
+const router = express.Router()
 
-app.get('/:name', function(req, res){
+router.get('/:name', function(req, res){
   res.send('hello, ' + req.params.name )
 })
 
