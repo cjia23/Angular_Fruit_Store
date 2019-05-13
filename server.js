@@ -5,8 +5,8 @@ var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
 
 //database 
-mongoose.connect('mongodb://localhost:3000/item')
-var Item = require('./models/item')
+mongoose.connect('mongodb://localhost:27017')
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -19,10 +19,11 @@ app.use(function(req, res, next) {
 });
 
 //using the routers detail can be checked in the index and users files
-const indexRouter = require('./routes/index')
-const userRouter = require('./routes/users')
+const fruitRouter = require('./routes/fruit')
+const userRouter = require('./routes/user')
 
-app.use('/', indexRouter)
-app.use('/users', userRouter)
+app.use('/', fruitRouter)
+app.use('/user', userRouter)
 
 app.listen(3000)
+console.log("Magic is happening at port 3000. Welcome to chunyang's Fruitstore API.")

@@ -4,23 +4,25 @@ import { NgModule } from '@angular/core';
 import { MatToolbarModule} from '@angular/material'
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
-import { LoginComponent } from './layout/auth/login/login.component';
-import { MainDeskComponent } from './layout/auth/main-desk/main-desk.component';
-import { RegisterComponent } from './layout/auth/register/register.component';
-import { UserDashboardComponent } from './layout/auth/user-dashboard/user-dashboard.component';
+import { LoginComponent } from './layout/login/login.component';
+import { RegisterComponent } from './layout/register/register.component';
+import { FrontpageComponent } from './layout/frontpage/frontpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    MainDeskComponent,
     RegisterComponent,
-    UserDashboardComponent
+    FrontpageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,10 @@ import { UserDashboardComponent } from './layout/auth/user-dashboard/user-dashbo
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
