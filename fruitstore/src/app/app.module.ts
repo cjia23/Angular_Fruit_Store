@@ -21,7 +21,8 @@ import { FrontpageComponent } from './layout/frontpage/frontpage.component';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    FrontpageComponent
+    FrontpageComponent,
+    
 
   ],
   imports: [
