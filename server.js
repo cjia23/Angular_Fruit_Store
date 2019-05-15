@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
+var cors = require('cors')
 
 //database 
 mongoose.connect('mongodb://localhost:27017')
@@ -12,11 +13,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.setHeader("Access-Control-Allow-Origin", '*');
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
+
+app.use(cors());
 
 //using the routers detail can be checked in the index and users files
 const fruitRouter = require('./routes/fruit')

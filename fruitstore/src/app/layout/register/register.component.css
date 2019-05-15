@@ -1,0 +1,21 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #236b415b;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-button-row button,
+  .example-button-row a {
+    display: block;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 8px;
+  }

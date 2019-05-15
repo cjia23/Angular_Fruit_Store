@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
-
 import { User } from 'src/app/model/user';
 
-const url = 'https://localhost:3000';
+const url = 'http://localhost:3000';
 
 @Injectable({
   providedIn: 'root'
@@ -13,27 +12,35 @@ const url = 'https://localhost:3000';
 export class AuthService {
 
   constructor(private _http: HttpClient) {}
+  
+  getUserlist(){
+     let new_url = url + '/user';
+     
+     return this._http.get(new_url)
+  }
 
-  submitRegister(body:any){
-    let new_url = url + '/register';
-    return this._http.post(new_url, body,{
-      observe:'body'
-    });
+  //post request to register a new user
+  addAuser(body: any){
+     let new_url = url + '/user';
+     
+     return this._http.post(new_url, {
+       method: 'POST',
+       body: body,
+       headers: new HttpHeaders({'Content-Type': 'application/json',
+                                 'Accept': 'application/json'
+      })
+     })
   }
-  
+
   login(body: any){
-    let new_url = url + '/login';
-    return this._http.post(new_url, body,{observe:'body'})}
-  
-  logout(body:any){
-    localStorage.removeItem('currentUser');
+    let new_url = url + '/user';
+    return this._http.post(new_url, {
+      method: 'POST',
+      body: body,
+      headers: new HttpHeaders({'Content-Type': 'application/json',
+                                'Accept': 'application/json'
+     })
+    })
   }
-  
-  setUserstatus() {
-    let new_url = url + '/username';
-    return this._http.get(new_url, {
-      observe: 'body',
-      params: new HttpParams().append('token', localStorage.getItem('token'))
-    });
-  }
+
 }

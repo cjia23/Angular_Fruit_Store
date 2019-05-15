@@ -7,6 +7,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +37,9 @@ import { FrontpageComponent } from './layout/frontpage/frontpage.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

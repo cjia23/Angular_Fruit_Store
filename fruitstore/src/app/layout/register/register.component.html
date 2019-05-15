@@ -1,3 +1,26 @@
-<p>
-  register works!
-</p>
+<div class="example-container">
+    
+    <mat-form-field>
+        <input  matInput placeholder="Enter your username" [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getusernameErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input  matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input  matInput placeholder="Enter your password" [formControl]="password" required>
+        <mat-error *ngIf="password.invalid">{{getpasswordErrorMessage()}}</mat-error>
+    </mat-form-field>
+    
+    <div class="example-button-row" color = "primary">
+        <button mat-raised-button (click) = "registerNewUser()" >Register</button>
+    </div>
+
+    <div class="example-button-row" color = "primary">
+            <button mat-raised-button (click) = "movetologin()" >moveToLogin</button>
+    </div>
+  
+</div>
