@@ -9,4 +9,5 @@ fruitstore for Angular frontend, serving at http://localhost:4200.
 
 mongodb for database, serving at http://localhost:27017
 
-Still development in progress
+**fruitstore folder** as angular frontend
+**server.js** is the backend server file
