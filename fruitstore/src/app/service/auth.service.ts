@@ -23,24 +23,12 @@ export class AuthService {
   addAuser(body: any){
      let new_url = url + '/user';
      
-     return this._http.post(new_url, {
-       method: 'POST',
-       body: body,
-       headers: new HttpHeaders({'Content-Type': 'application/json',
-                                 'Accept': 'application/json'
-      })
-     })
-  }
+     return this._http.post(new_url,body)
+     }
 
-  login(body: any){
-    let new_url = url + '/user';
-    return this._http.post(new_url, {
-      method: 'POST',
-      body: body,
-      headers: new HttpHeaders({'Content-Type': 'application/json',
-                                'Accept': 'application/json'
-     })
-    })
+   deleteanUser(user: any){
+      let new_url = url + '/user' + `/${user._id}`;
+      
+      return this._http.delete(new_url)
+   }
   }
-
-}

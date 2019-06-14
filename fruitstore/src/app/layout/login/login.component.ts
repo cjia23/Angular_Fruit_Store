@@ -1,3 +1,4 @@
+import { AuthService } from './../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute} from '@angular/router';
@@ -17,12 +18,11 @@ export class LoginComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
   constructor(private formBuilder: FormBuilder,
+              private authservice: AuthService,
               private _router: Router,
               private _activatedroute: ActivatedRoute) { }
 
-  ngOnInit(){
-    
-  }
+  ngOnInit(){}
   
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -40,6 +40,12 @@ export class LoginComponent implements OnInit {
       this._router.navigate(['../register'])
   }
 
-  
+  login(){
+      
+  }
+
+  logout(){
+    
+  }
   
 }

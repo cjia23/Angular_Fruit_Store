@@ -15,6 +15,8 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { LoginComponent } from './layout/login/login.component';
 import { RegisterComponent } from './layout/register/register.component';
 import { FrontpageComponent } from './layout/frontpage/frontpage.component';
+import { LogindashboardComponent } from './layout/logindashboard/logindashboard.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { FrontpageComponent } from './layout/frontpage/frontpage.component';
     LoginComponent,
     RegisterComponent,
     FrontpageComponent,
+    LogindashboardComponent,
     
 
   ],
@@ -39,6 +42,8 @@ import { FrontpageComponent } from './layout/frontpage/frontpage.component';
     MatCardModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    MatTableModule,
+    MatButtonModule
 
   ],
   providers: [],

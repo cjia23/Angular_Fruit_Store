@@ -1,9 +1,8 @@
+import { User } from 'src/app/model/user';
 import { AuthService } from 'src/app/service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router} from '@angular/router';
-import { MatDialog} from '@angular/material'
 import { FormBuilder, FormControl,FormGroup, Validators } from '@angular/forms';
-import { NG_MODEL_WITH_FORM_CONTROL_WARNING } from '@angular/forms/src/directives';
 
 
 @Component({
@@ -19,7 +18,6 @@ export class RegisterComponent implements OnInit {
   password = new FormControl('', [Validators.required, Validators.minLength(6)]);
   username = new FormControl('', [Validators.required, Validators.minLength(5)]);
   
-
   constructor(private formBuilder: FormBuilder,
               private authservice: AuthService,
               private _router: Router) { 
@@ -28,13 +26,16 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     
+    this.authservice.getUserlist()
+        .subscribe(data => {this.userlist = data})
+        
   }
 
   userForm = new FormGroup({
     email: this.email,
     username: this.username,
     password: this.password
-  });
+  })
 
   getErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
@@ -61,14 +62,23 @@ export class RegisterComponent implements OnInit {
       
        this.authservice.addAuser(this.userForm.value)
           .subscribe(
-            data => {this.message = 'User created!', console.log(this.message)},
-            error => {this.message = 'Error when adding user.', console.log(this.message)}
-          )
+            data => console.log(data))
      }
   }
 
   movetologin(){
     this._router.navigate(['../login'])
   }
+  
+  //userlist
+  userlist;
+  displayedColumns: string[] = ['username', 'email', 'password','isUser','isAdmin','manage'];
 
+  deleteanUser(user: any): void{
+    this.userlist = this.userlist.filter(h => h !== user);
+    this.authservice.deleteanUser(user)
+      .subscribe(data => console.log(data))
+    console.log("delete request sent")
+    
+  }
 }

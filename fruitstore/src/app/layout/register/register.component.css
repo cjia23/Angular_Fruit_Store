@@ -3,8 +3,8 @@
     flex-direction: column;
     background-color: #236b415b;
     position: absolute;
-    left: 50%;
-    top: 50%;
+    left:20%;
+    top: auto;
   }
   
   .example-container > * {
@@ -18,4 +18,9 @@
     margin-right: auto;
     margin-left: auto;
     margin-top: 8px;
+  }
+
+  table {
+    width: 50%;
+    margin-top: 10cm;
   }
