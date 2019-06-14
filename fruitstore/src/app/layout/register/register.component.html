@@ -25,10 +25,7 @@
 </div>
 
 <table mat-table [dataSource]="userlist" class="mat-elevation-z8">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
+ 
     <!-- username Column -->
     <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef> Username </th>
@@ -64,8 +61,7 @@
         <th mat-header-cell *matHeaderCellDef> Manage </th>
         <td mat-cell *matCellDef="let element">
                 <button mat-raised-button (click) = 'deleteanUser(element)'>Delete</button>
-                <button mat-raised-button>Change to Admin</button>
-                <button mat-raised-button>Disable User</button>
+                <button mat-raised-button (click) = 'giveAdminpower(element)'>Give Admin power</button>
         </td>
     </ng-container>
   

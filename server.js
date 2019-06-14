@@ -88,21 +88,17 @@ router.route('/user/:id')
 
   .put(function(req,res){
           
-    Item.findById(req.params.id,function(err,item){
+    User.findById(req.params.id,function(err,user){
       if(err)
         res.send(err);
-      item.name = item.name;
-      item.price = item.price;
-      item.quantity = req.body.quantity;
-      item.tax_rate = req.body.tax_rate;
+      user.isAdmin = req.body.isAdmin;
       
       
-      
-      item.save(function(err){
+      user.save(function(err){
           if(err)
             res.send(err);
             
-          res.json({message: 'Item updated'});
+          res.json({message: 'Given admin power to this user.'});
       });
     });
   })

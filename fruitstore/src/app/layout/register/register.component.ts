@@ -81,4 +81,10 @@ export class RegisterComponent implements OnInit {
     console.log("delete request sent")
     
   }
+
+  giveAdminpower(user: any): void{
+      this.authservice.giveAdminpower(user)
+        .subscribe(data => console.log(data))
+      console.log("change to amdin request sent.")
+  }
 }
